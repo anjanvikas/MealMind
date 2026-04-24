@@ -20,7 +20,11 @@
 
 ## Learnings & Best Practices (Over Time)
 - **Telegram Formatting**: Telegram's HTML parser is strict. Always ensure tags are properly closed to prevent `Bad Request: can't parse entities` errors.
-- **Context Management**: Inject real-time temporal data (time, date) and maintain persistent conversational memory to keep the AI's context aware and time-sensitive.
+- **Context Management**: Inject real-time temporal data (time, date) and maintain persistent conversational memory. Use `GEMINI.md` files for hierarchical context:
+  - **Global**: `~/.gemini/GEMINI.md` for cross-project defaults.
+  - **Workspace**: Root `GEMINI.md` for project-specific standards.
+  - **JIT**: Directory-level `GEMINI.md` for component-specific context.
+- **Memory Commands**: Use `/memory show` to inspect context, `/memory reload` to refresh, and `/memory add <text>` for persistent global memories.
 
 ---
 *Note to AI: Keep this file updated as the project evolves.*
